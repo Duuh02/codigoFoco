@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style/styleTelaLogin.css">
+    <script>
+        function validatePassword() {
+            const password = document.getElementById("senha").value;
+            const confirmPassword = document.getElementById("confsenha").value;
+
+            const predeterminedPassword = password;
+
+            if (password !== predeterminedPassword) {
+                alert("A senha deve ser exatamente: " + predeterminedPassword);
+                return false;
+            }
+            
+            if (password !== confirmPassword) {
+                alert("As senhas não coincidem. Por favor, tente novamente.");
+                return false; 
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <section id="container" class="container">
+        <div id="corpo" class="corpo">
+            <h2>Criar Conta</h2>
+            <form action="tela1.html" method="POST" onsubmit="return validatePassword()">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <label for="confsenha">Confirme Sua Senha:</label>
+                <input type="password" id="confsenha" name="confsenha" required>
+    
+                <button type="submit">Registrar</button>
+    
+                <div class="links">
+                    <a href="telalogin.html">Já tem uma conta? Faça login</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
